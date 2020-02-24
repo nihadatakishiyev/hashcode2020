@@ -31,13 +31,9 @@ public class Main {
             File myObj = new File("./src/in.txt");
             BufferedWriter br = new BufferedWriter(new FileWriter(new File("./src/out.txt")));
             Scanner myReader = new Scanner(myObj);
-//            System.out.println(myReader.nextInt());
             book_count = myReader.nextInt();
             int[] usedBooks = new int[book_count];
             int cnt = 0;
-//            System.out.println(myReader.nextInt());
-//            System.out.println(myReader.nextInt());
-//            System.out.println();
             library_count = myReader.nextInt();
             days = myReader.nextInt();
             for (int i = 0; i < book_count; i++) {
@@ -68,11 +64,6 @@ public class Main {
                     }
                 }.reversed());
                 library.setBooks(a);
-//                if (i == 2){
-//                    for (int j = 0; j <library.getBookCount() ; j++) {
-//                        System.out.print(library.getBooks().get(j).getScore() + " ");
-//                    }
-//                }
                 library.setTotalScore(scores,days);
                 libraries.add(library);
             }
@@ -82,14 +73,9 @@ public class Main {
 //            Collections.sort(libraries2, new CustomComparator3());
 //            System.out.println(library);
             br.write(library_count + "\n");
-          //  System.out.println(libraries2.get(399).getBookCount());
             for (int i = 0; i < library_count; i++) {
                 Library temp = libraries2.get(i);
                 if (temp.getSignUp()<days){
-//                    System.out.print(temp.getID() + " ");
-             //       br.write(temp.getID() + " ");
-//                    br.write(temp.getBookCount() + " \n");
-//                    System.out.print(temp.getBookCount() + " \n");
                     List<Book> aa = temp.getBooks();
                     int n = 0;
                     int m=0;
@@ -103,13 +89,11 @@ public class Main {
                                 ls.add(aa.get(j).getId());
                                 m++;
                             }
-//                            br.write(aa.get(j).getId()+ " ");
                         }
                         else {
                             n++;
                         }
                         if (j == temp.getBookCount()-1) {
-//                                System.out.println("Test + " + temp.getID());
                             if (temp.getBookCount()-n>0) {
                                 br.write(temp.getID() + " ");
                                 br.write((Math.min((temp.getBookCount() - n), temp.getMaxBookCount())) + " \n");
@@ -117,17 +101,11 @@ public class Main {
                                     br.write(ls.get(k)+ " ");
                                 }
                             }else{
-                               // br.write(" \n");
                                 cnt++;
                             }
-                            //n++;
-//                            for (int k = 0; k <Math.min((temp.getBookCount() - n), temp.getMaxBookCount()) ; k++) {
-//                                br.write(ls.get(k)+ " ");
-//                            }
                         }
                     }
 
-//                    System.out.println();
                     if(temp.getMaxBookCount()-n > 0)
                         br.write('\n');
                 }
